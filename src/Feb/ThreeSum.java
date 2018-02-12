@@ -10,7 +10,7 @@ public class ThreeSum {
 		ThreeSum ts = new ThreeSum();
 		int[] array = {1,-1,2,-2,0,-3,3};
 		List<List<Integer>> res = ts.threeSum(array);
-		for(List val : res){
+		for(List<Integer> val : res){
 			for(int i = 0; i < val.size(); i++){
 				System.out.print(val.get(i) + "     ");
 			}
