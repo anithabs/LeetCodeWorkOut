@@ -27,7 +27,41 @@ public class ArraysAndStrings {
 		boolean oneWayEdit = as.oneWayEdit(str5, str6);
 		System.out.println(oneWayEdit);
 		
+		String str7 = "aaaaaaaaaaaaassssssssssddddddddddggggggggggggg";
+		String compressedString = as.stringCompression(str7);
+		System.out.println(compressedString);
+		
+		String str9 = "waterbottle";
+		String str10 = "ttlewaterb";
+		boolean stringRotation = as.stringRotation(str9, str10);
+		System.out.println(stringRotation);
 	}
+	
+	private boolean stringRotation(String str1, String str2){
+		if(str1.length() !=  str2.length() && str1.length() > 0 ){
+			return false;
+		}
+		String concatinate = str1 +str1;
+		return concatinate.contains(str2);
+	}
+	
+	private String stringCompression(String str){
+		StringBuilder result = new StringBuilder();
+		int count = 1; 
+		for(int i = 0; i < str.length(); i++){
+			if(i+1 < str.length()){
+				if(str.charAt(i)== str.charAt(i+1)){
+					count ++;
+				}else {
+					result.append(str.charAt(i));
+					result.append(count);
+					count = 1;
+				}
+			}
+		}
+		return str.length() < result.length()? str : result.toString();
+	}
+	
 	private boolean oneWayEdit(String str1, String str2){
 		if(Math.abs(str1.length() - str2.length()) > 1) return false;
 		boolean result;
