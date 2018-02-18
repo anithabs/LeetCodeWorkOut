@@ -7,4 +7,5 @@ public class AddDigits {
 		String decode = edtURL.decode(encode);
 		System.out.println(encode + " " + decode);
 	}
+	
 }
